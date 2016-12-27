@@ -12,18 +12,26 @@
         android:src="@drawable/bucky"
         android:layout_margin="8dp"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+
     <TextView
         android:id="@+id/title_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bucky"
-        android:layout_margin="8dp"
         android:textColor="#0000FF" />
 
     <TextView
         android:id="@+id/subtitle_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Hi"
         android:textColor="#FF00FF" />
+
+    </LinearLayout>
 
 </LinearLayout>

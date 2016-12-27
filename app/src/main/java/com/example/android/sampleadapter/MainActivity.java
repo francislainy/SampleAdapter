@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,12 +21,19 @@ public class MainActivity extends AppCompatActivity {
         String[] portugueseWords = new String[]{"um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"};
 
 
+        ArrayList<User> arrayOfUsers = new ArrayList<User>();
+
         /**
          * Creating the Array Adapter and setting it into the ListView
          */
-        ArrayAdapter<String> itemsAdapter = new CustomAdapter(this, defaultWords);
+        ArrayAdapter<User> itemsAdapter = new CustomAdapter(this, arrayOfUsers);
         ListView listView = (ListView) findViewById(R.id.list_item);
         listView.setAdapter(itemsAdapter);
+
+        for (int i = 0; i < defaultWords.length; i++) {
+            User u = new User(defaultWords[i], portugueseWords[i], R.drawable.bucky);
+            arrayOfUsers.add(u);
+        }
 
         /**
          * Setting Click Listener to items on ListView
